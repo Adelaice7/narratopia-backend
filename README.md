@@ -84,12 +84,10 @@ API will be running at: http://localhost:5000/api
     
 - 🔐 JWT Auth
     
-- 🛡️ Helmet + CORS + morgan
-    
-- 🧪 Postman-ready routes
+- Helmet + CORS + morgan
 
 ---
 
-## 📎 Related Projects
+##  Related Projects
 
 - [Narratopia Frontend](https://github.com/Adelaice7/narratopia-frontend)
