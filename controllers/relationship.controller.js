@@ -1,10 +1,9 @@
-// server/controllers/relationship.controller.js
 const Relationship = require('../models/Relationship');
 const Codex = require('../models/Codex');
 const Project = require('../models/Project');
 const mongoose = require('mongoose');
 
-// Helper function to check project ownership
+// Check project ownership
 const checkProjectOwnership = async (projectId, userId) => {
   const project = await Project.findById(projectId);
   if (!project) {

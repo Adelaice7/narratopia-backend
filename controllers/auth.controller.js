@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 // JWT Secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET || 'jwtsecretkey';
 const JWT_EXPIRE = process.env.JWT_EXPIRE || '7d';
 
 // Generate JWT token

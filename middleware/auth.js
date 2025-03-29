@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 // JWT Secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET || 'jwt-secret-key';
 
 // Middleware to protect routes
 exports.protect = async (req, res, next) => {
@@ -57,7 +57,7 @@ exports.protect = async (req, res, next) => {
   }
 };
 
-// Optional middleware to check if user is admin
+// Check if user is admin
 exports.admin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next();

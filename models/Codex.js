@@ -1,4 +1,3 @@
-// server/models/Codex.js
 const mongoose = require('mongoose');
 
 const CodexSchema = new mongoose.Schema({

@@ -1,4 +1,3 @@
-// server/models/Relationship.js
 const mongoose = require('mongoose');
 
 const RelationshipSchema = new mongoose.Schema({

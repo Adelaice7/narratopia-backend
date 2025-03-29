@@ -1,4 +1,3 @@
-// server/controllers/chapter.controller.js
 const Chapter = require('../models/Chapter');
 const Project = require('../models/Project');
 const Version = require('../models/Version');
@@ -16,7 +15,7 @@ const checkProjectOwnership = async (projectId, userId) => {
   return { project };
 };
 
-// Helper function to count words in content
+// Count words in content
 const countWords = (content) => {
   try {
     if (!content) return 0;

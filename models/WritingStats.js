@@ -1,4 +1,3 @@
-// server/models/WritingStat.js
 const mongoose = require('mongoose');
 
 const WritingStatSchema = new mongoose.Schema({

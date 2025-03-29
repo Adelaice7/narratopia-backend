@@ -1,4 +1,3 @@
-// server/controllers/project.controller.js
 const Project = require('../models/Project');
 const Chapter = require('../models/Chapter');
 const Codex = require('../models/Codex');

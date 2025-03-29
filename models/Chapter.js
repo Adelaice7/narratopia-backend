@@ -1,4 +1,3 @@
-// server/models/Chapter.js
 const mongoose = require('mongoose');
 
 const ChapterSchema = new mongoose.Schema({

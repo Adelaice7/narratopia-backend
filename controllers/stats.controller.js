@@ -3,7 +3,7 @@ const Project = require('../models/Project');
 const Chapter = require('../models/Chapter');
 const mongoose = require('mongoose');
 
-// Helper function to check project ownership
+// Check project ownership
 const checkProjectOwnership = async (projectId, userId) => {
   const project = await Project.findById(projectId);
   if (!project) {

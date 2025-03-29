@@ -1,4 +1,3 @@
-// server/models/Version.js
 const mongoose = require('mongoose');
 
 const VersionSchema = new mongoose.Schema({
