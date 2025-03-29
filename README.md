@@ -90,15 +90,6 @@ API will be running at: http://localhost:5000/api
 
 ---
 
-## 📦 Folder Structure
-
-```bash
-
-`server/ ├── config/           # DB connection ├── controllers/      # Route logic ├── models/           # Mongoose schemas ├── routes/           # API endpoints ├── middleware/       # Auth middleware ├── utils/            # Helpers └── index.js          # Entry point`
-```
-
----
-
 ## 📎 Related Projects
 
 - [Narratopia Frontend](https://github.com/Adelaice7/narratopia-frontend)
