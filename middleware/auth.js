@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 // JWT Secret from environment variables
-const JWT_SECRET = process.env.JWT_SECRET || 'jwt-secret-key';
+const JWT_SECRET = process.env.JWT_SECRET || 'jwt-token';
 
 // Middleware to protect routes
 exports.protect = async (req, res, next) => {

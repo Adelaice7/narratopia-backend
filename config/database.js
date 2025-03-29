@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = 'mongodb://root:example@localhost:27017/narratopia-db?authSource=admin';
+const MONGODB_URI = process.env.MONGODB_URI | 'mongodb://root:example@localhost:27017/narratopia-db?authSource=admin';
 
 const connectDB = async () => {
   try {
