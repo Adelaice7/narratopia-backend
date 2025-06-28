@@ -23,7 +23,7 @@ const VALID_ENTITY_TYPES = ['character', 'location', 'item', 'event', 'concept']
 // @access  Private
 exports.getEntities = async (req, res) => {
   try {
-    const { projectId } = req.params;
+    const projectId = req.params.projectId || req.params.id;
     const { type, search, tags } = req.query;
     
     // Check project ownership
@@ -80,7 +80,7 @@ exports.getEntities = async (req, res) => {
 // @access  Private
 exports.createEntity = async (req, res) => {
   try {
-    const { projectId } = req.params;
+    const projectId = req.params.projectId || req.params.id;
     const { type, name, description, attributes, images, tags } = req.body;
     
     // Validate entity type

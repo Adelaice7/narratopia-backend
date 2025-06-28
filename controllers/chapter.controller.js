@@ -44,7 +44,7 @@ const countWords = (content) => {
 // @access  Private
 exports.getChapters = async (req, res) => {
   try {
-    const { projectId } = req.params;
+    const projectId = req.params.projectId || req.params.id;
     
     // Check project ownership
     const ownershipCheck = await checkProjectOwnership(projectId, req.user.id);
@@ -80,7 +80,7 @@ exports.getChapters = async (req, res) => {
 // @access  Private
 exports.createChapter = async (req, res) => {
   try {
-    const { projectId } = req.params;
+    const projectId = req.params.projectId || req.params.id;
     const { title, content, notes } = req.body;
     
     // Check project ownership

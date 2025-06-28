@@ -8,6 +8,8 @@ const {
   deleteProject,
   getProjectStats
 } = require('../controllers/project.controller');
+const { getChapters, createChapter } = require('../controllers/chapter.controller');
+const { getEntities, createEntity } = require('../controllers/codex.controller');
 const { protect } = require('../middleware/auth');
 
 // Apply auth middleware to all routes
@@ -24,5 +26,15 @@ router.route('/:id')
   .delete(deleteProject);
 
 router.get('/:id/stats', getProjectStats);
+
+// Chapter routes for projects
+router.route('/:id/chapters')
+  .get(getChapters)
+  .post(createChapter);
+
+// Codex routes for projects
+router.route('/:id/codex')
+  .get(getEntities)
+  .post(createEntity);
 
 module.exports = router;
