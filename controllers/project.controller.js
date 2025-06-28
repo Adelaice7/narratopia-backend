@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Project = require('../models/Project');
 const Chapter = require('../models/Chapter');
 const Codex = require('../models/Codex');
@@ -228,7 +229,7 @@ exports.getProjectStats = async (req, res) => {
     
     // Count codex entries by type
     const codexEntries = await Codex.aggregate([
-      { $match: { projectId: mongoose.Types.ObjectId(req.params.id) } },
+      { $match: { projectId: new mongoose.Types.ObjectId(req.params.id) } },
       { $group: { _id: '$type', count: { $sum: 1 } } }
     ]);
     
