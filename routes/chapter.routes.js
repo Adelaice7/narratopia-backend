@@ -25,12 +25,12 @@ router.route('/projects/:projectId/chapters')
 router.put('/projects/:projectId/chapters/reorder', reorderChapters);
 
 // Routes organized by chapter
-router.route('/chapters/:id')
+router.route('/:id')
   .get(getChapter)
   .put(updateChapter)
   .delete(deleteChapter);
 
-router.route('/chapters/:id/versions')
+router.route('/:id/versions')
   .get(getVersions)
   .post(createVersion);
 
