@@ -226,7 +226,9 @@ exports.updateChapter = async (req, res) => {
 // @access  Private
 exports.deleteChapter = async (req, res) => {
   try {
+    console.log('DELETE request received for chapter ID:', req.params.id);
     const chapter = await Chapter.findById(req.params.id);
+    console.log('Found chapter:', chapter ? chapter.title : 'NOT FOUND');
     
     if (!chapter) {
       return res.status(404).json({
@@ -245,10 +247,13 @@ exports.deleteChapter = async (req, res) => {
     }
     
     // Delete chapter
-    await chapter.remove();
+    console.log('Deleting chapter with ID:', req.params.id);
+    const deleteResult = await Chapter.findByIdAndDelete(req.params.id);
+    console.log('Chapter deletion result:', deleteResult ? 'SUCCESS' : 'FAILED');
     
     // Also delete associated versions
-    await Version.deleteMany({ chapterId: req.params.id });
+    const versionsDeleted = await Version.deleteMany({ chapterId: req.params.id });
+    console.log('Deleted versions count:', versionsDeleted.deletedCount);
     
     // Reorder remaining chapters
     await Chapter.updateMany(
@@ -259,6 +264,7 @@ exports.deleteChapter = async (req, res) => {
       { $inc: { orderIndex: -1 } }
     );
     
+    console.log('Sending success response for chapter deletion');
     res.status(200).json({
       success: true,
       message: 'Chapter deleted successfully'

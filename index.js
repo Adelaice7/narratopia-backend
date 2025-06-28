@@ -40,7 +40,12 @@ Promise.all([
 // Middleware
 app.use(express.json({ limit: '50mb' })); // For parsing JSON
 app.use(express.urlencoded({ extended: true, limit: '50mb' })); // For parsing URL-encoded data
-app.use(cors()); // Enable CORS
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://127.0.0.1:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+})); // Enable CORS
 app.use(helmet()); // Security headers
 app.use(morgan('dev')); // HTTP request logger
 
